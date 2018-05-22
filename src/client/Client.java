@@ -60,10 +60,14 @@ public class Client extends Thread{
                    text += c;
                }
            }
-           chatPanel.getUsers().setText("Dostępni użytkownicy:\n" + text);
+           chatPanel.getUsers().setText(text);
        } else if (chatPanel != null) {
            String allMessages = chatPanel.getMessages().getText();
-           chatPanel.getMessages().setText(allMessages + '\n' + message);
+           if (allMessages.isEmpty()) {
+               chatPanel.getMessages().setText(message);
+           } else {
+               chatPanel.getMessages().setText(allMessages + '\n' + message);
+           }
        }
    }
 

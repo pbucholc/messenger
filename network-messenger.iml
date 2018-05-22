@@ -8,13 +8,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="designgridlayout-1.11" level="project" />
-    <orderEntry type="library" name="syntheticaBlackEye" level="project" />
-    <orderEntry type="library" name="syntheticaAluOxide" level="project" />
-    <orderEntry type="library" name="syntheticaBlueLight" level="project" />
-    <orderEntry type="library" name="syntheticaWhiteVision" level="project" />
-    <orderEntry type="library" name="guava-24.1-jre" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.46" level="project" />
-    <orderEntry type="library" name="synthetica" level="project" />
+    <orderEntry type="library" name="network-messenger" level="project" />
   </component>
 </module>

@@ -25,7 +25,8 @@ public class MainWindow extends JFrame {
             e.printStackTrace();
         }
 
-        frameDimension = new Dimension(400,500);
+
+        frameDimension = new Dimension(400,515);
         setPreferredSize(frameDimension);
 
         setTitle("Network Messenger");

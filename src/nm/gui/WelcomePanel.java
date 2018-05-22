@@ -6,6 +6,8 @@ import nm.logics.listeners.SignUpPanelButtonListener;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class WelcomePanel extends JPanel {
 
@@ -25,8 +27,25 @@ public class WelcomePanel extends JPanel {
         logInButton = new JButton("Logowanie");
         logInButton.setPreferredSize(new Dimension(0,35));
         logInButton.setVisible(true);
-
         logInButton.addActionListener(new LogInPanelButtonListener(this,mainWindow,dimension));
+        logInButton.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        });
 
         signUpButton = new JButton("Rejestracja");
         signUpButton.setPreferredSize(new Dimension(0,35));

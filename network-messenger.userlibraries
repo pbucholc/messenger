@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="network-messenger">
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/synthetica.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/guava-24.1-jre.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaPlain.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaWhiteVision.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/mysql-connector-java-5.1.46.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaOrangeMetallic.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaSilverMoon.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaBlackEye.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaBlackStar.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaBlueLight.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaGreenDream.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaBlueMoon.jar" />
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaAluOxide.jar" />
+    <archive path="C:/Users/Paulina Bucholc/Downloads/designgridlayout-1.5.jar" />
+  </library>
+  <library name="synthetica">
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/synthetica.jar" />
+  </library>
+  <library name="syntheticaBlackEye">
+    <archive path="C:/Users/Paulina Bucholc/IdeaProjects/Nowy folder/network-messenger/syntheticaBlackEye.jar" />
+  </library>
+</eclipse-userlibraries>
+

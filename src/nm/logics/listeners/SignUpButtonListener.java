@@ -28,22 +28,18 @@ public class SignUpButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        SoundPlayer.playSound("beep");
         User.login = signUpPanel.getEmail().getText();
-
         if(User.login.length() < 3){
             JOptionPane.showMessageDialog(null, "Podany login jest za krótki. Minimalna długość to 3 znaki.");
-        return;
+            return;
         }
 
-
         User.password = signUpPanel.getPassword().getText();
-
         if(User.password.length() < 5){
             JOptionPane.showMessageDialog(null, "Podane hasło jest za krótkie. Minimalna długość hasła to 5 znaków.");
             return;
         }
-
 
         Long passwordMD5 = Hashing.md5().hashString(User.password, Charsets.UTF_8).asLong();
 
@@ -56,7 +52,5 @@ public class SignUpButtonListener implements ActionListener {
         } else {
             JOptionPane.showMessageDialog(null, "Rejestracja niepowiodła się. Uzytkownik o podanym loginie już istnieje w bazie danych.");
         }
-
-        SoundPlayer.playSound("beep");
     }
 }

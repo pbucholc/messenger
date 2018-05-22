@@ -11,6 +11,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class LogInPanel extends JPanel{
 
@@ -38,6 +40,14 @@ public class LogInPanel extends JPanel{
         password.setPlaceholder("Hasło");
         password.setFont(new Font(password.getFont().getName(), password.getFont().getStyle(), 18));
         password.setPreferredSize(new Dimension(0,35));
+        password.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    logIn.doClick();
+                }
+            }
+        });
 
         logIn = new JButton("Zaloguj się");
         logIn.addActionListener(new LogInButtonListener(this,mainWindow));

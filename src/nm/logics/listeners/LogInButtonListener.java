@@ -25,36 +25,27 @@ public class LogInButtonListener implements ActionListener {
      public LogInButtonListener(LogInPanel logInPanel, MainWindow mainWindow){
          this.logInPanel=logInPanel;
          this.mainWindow=mainWindow;
-         this.dimension = new Dimension(700,500);
+         this.dimension = new Dimension(700,515);
      }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-         boolean userExists = true;
-         if (userExists) {
-             User.login = logInPanel.getEmail().getText();
-             User.password = logInPanel.getPassword().getText();
+        SoundPlayer.playSound("beep");
+        User.login = logInPanel.getEmail().getText();
+        User.password = logInPanel.getPassword().getText();
+        Long passwordMD5 = Hashing.md5().hashString(User.password, Charsets.UTF_8).asLong();
 
-             Long passwordMD5 = Hashing.md5().hashString(User.password, Charsets.UTF_8).asLong();
+        boolean logInSuccesed = ConnectDatabase.logIn(User.login, passwordMD5 + "");
 
-             boolean logInSuccesed = ConnectDatabase.logIn(User.login, passwordMD5 + "");
-
-             if(logInSuccesed){
-                 mainWindow.remove(logInPanel);
-                 mainWindow.setSize(dimension);
-                 mainWindow.add(new ChatPanel(dimension, mainWindow));
-                 mainWindow.revalidate();
-                 mainWindow.repaint();
-                 mainWindow.getClient().sendToServer("[user_joined]" + User.login);
-             }
-             else{
-                 JOptionPane.showMessageDialog(null, "Logowanie nie powiodło się. Wprowadzono nieprawidłowy login bądź hasło.");
-             }
-
-             SoundPlayer.playSound("beep");
-         } else {
-
-
-         }
+        if (logInSuccesed) {
+            mainWindow.remove(logInPanel);
+            mainWindow.setSize(dimension);
+            mainWindow.add(new ChatPanel(dimension, mainWindow));
+            mainWindow.revalidate();
+            mainWindow.repaint();
+            mainWindow.getClient().sendToServer("[user_joined]" + User.login);
+        } else {
+            JOptionPane.showMessageDialog(null, "Logowanie nie powiodło się. Wprowadzono nieprawidłowy login bądź hasło.");
+        }
     }
 }

@@ -1,19 +1,14 @@
 package nm.gui;
 
 import client.Client;
-import net.java.dev.designgridlayout.DesignGridLayout;
 import nm.logics.listeners.*;
 import nm.gui.components.PlaceholderTextField;
 
 import javax.swing.*;
 import javax.swing.text.DefaultCaret;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileInputStream;
 
 public class ChatPanel extends JPanel {
 
@@ -22,6 +17,7 @@ public class ChatPanel extends JPanel {
 
     private JTextArea messages;
     private JTextArea users;
+    private JLabel usersLabel;
     private PlaceholderTextField myMessage;
     private JMenu editing;
     private JMenu info;
@@ -36,7 +32,6 @@ public class ChatPanel extends JPanel {
     private JScrollPane scrollChatPane;
     private JScrollPane scrollUserPane;
     private JButton send;
-    private JButton addFile;
     private Client client;
 
     public ChatPanel(Dimension frameDimension, MainWindow mainWindow) {
@@ -46,49 +41,62 @@ public class ChatPanel extends JPanel {
         client = mainWindow.getClient();
         client.setChatPanel(this);
 
-        //----------------------------contentPanel-------------------------
+    //----------------------------contentPanel-------------------------
 
         contentPanel = new JPanel();
-        DesignGridLayout contentLayout = new DesignGridLayout(contentPanel);
+        contentPanel.setLayout(null);
 
         messages = new JTextArea();
         messages.setEditable(false);
         messages.setBackground(null);
-        messages.setPreferredSize(new Dimension(0, 380));
         ((DefaultCaret) messages.getCaret()).setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+        scrollChatPane = new JScrollPane(messages, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        contentPanel.add(scrollChatPane);
+        scrollChatPane.setSize(450,365);
+        scrollChatPane.setLocation(15,15);
+
+
+        usersLabel = new JLabel("Dostępni użytkownicy:");
+        usersLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        contentPanel.add(usersLabel);
+        usersLabel.setSize(185,25);
+        usersLabel.setLocation(480,15);
 
         users = new JTextArea();
         users.setForeground(Color.BLACK);
         users.setEditable(false);
-        users.setPreferredSize(new Dimension(0, 380));
-        users.setText(" Dostępni użytkownicy: ");
         ((DefaultCaret) users.getCaret()).setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+        scrollUserPane = new JScrollPane(users, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        contentPanel.add(scrollUserPane);
+        scrollUserPane.setSize(185,340);
+        scrollUserPane.setLocation(480,40);
+
 
         myMessage = new PlaceholderTextField();
         myMessage.setDisabledTextColor(Color.BLACK);
-        myMessage.setPreferredSize(new Dimension(myMessage.getWidth(), 30));
         myMessage.setPlaceholder("Napisz wiadomość...");
         myMessage.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    send.doClick();
-                }
+          if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            send.doClick();
+          }
             }
         });
+        contentPanel.add(myMessage);
+        myMessage.setSize(450,30);
+        myMessage.setLocation(15,390);
 
-        scrollChatPane = new JScrollPane(messages, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollUserPane = new JScrollPane(users, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         send = new JButton("Wyślij");
-        addFile = new JButton("Załącz plik");
-
-        contentLayout.row().grid(new JLabel("")).add(scrollChatPane, 2).add(scrollUserPane);
-        contentLayout.row().grid(new JLabel("")).add(myMessage, 2).add(send);
+        contentPanel.add(send);
+        send.setSize(185,30);
+        send.setLocation(480,390);
 
         this.add(contentPanel, BorderLayout.CENTER);
 
-        //----------------------------menu-------------------------
+    //----------------------------menu-------------------------
+
         menu = new JMenuBar();
         editing = new JMenu("Edycja"); // child 1
         fontColor = new JMenuItem("Kolor Czcionki");
@@ -137,17 +145,12 @@ public class ChatPanel extends JPanel {
         information.addActionListener(new InfoListener(mainWindow));
         logout.addActionListener(new LogOutListener(this, mainWindow));
         send.addActionListener(new SendMessageListener(myMessage, client));
-        addFile.addActionListener(new AddFileListener());
 
+        setVisible(true);
+        setOpaque(true);
 
-        //----------------------------menu-------------------------
-
-    setVisible(true);
-    setOpaque(true);
-
-    SoundPlayer.playSound("intro");
-
-}
+        SoundPlayer.playSound("intro");
+    }
 
     public JTextArea getMessages(){
         return messages;

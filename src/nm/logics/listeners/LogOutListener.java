@@ -23,12 +23,11 @@ public class LogOutListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         mainWindow.remove(chatPanel);
-        mainWindow.add(new WelcomePanel(400,500,mainWindow));
-        mainWindow.setSize(new Dimension(400,500));
+        mainWindow.add(new WelcomePanel(400,515,mainWindow));
+        mainWindow.setSize(new Dimension(400,515));
         mainWindow.revalidate();
         mainWindow.repaint();
-
-
+        
         SoundPlayer.playSound("intro");
     }
 }

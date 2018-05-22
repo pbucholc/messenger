@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="network-messenger">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/synthetica.jar!/" />
+      <root url="jar://$PROJECT_DIR$/guava-24.1-jre.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaPlain.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaWhiteVision.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mysql-connector-java-5.1.46.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaOrangeMetallic.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaSilverMoon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaBlackEye.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaBlackStar.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaBlueLight.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaGreenDream.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaBlueMoon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/syntheticaAluOxide.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/designgridlayout-1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

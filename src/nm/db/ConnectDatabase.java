@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ConnectDatabase {
-    private final static String DBURL = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11228782";
-    private final static String DBUSER = "sql11228782";
-    private final static String DBPASS = "qY1QNrsuEw";
+    private final static String DBURL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7239337";
+    private final static String DBUSER = "sql7239337";
+    private final static String DBPASS = "zRXbxV2a3j";
     private final static String DBDRIVER = "com.mysql.jdbc.Driver";
 
 
