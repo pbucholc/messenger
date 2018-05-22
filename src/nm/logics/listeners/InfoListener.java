@@ -16,7 +16,6 @@ public class InfoListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
-        JOptionPane.showMessageDialog(mainWindow, "Network messenger - komunikator grupowy stworzony w ramach projektu zespołowego."
-                + " \n" + "Autorzy : Paulina Bucholc, Krystian Witek, Szymon Romaniuk, Michał Paluszkiewicz.");
+        JOptionPane.showMessageDialog(mainWindow, "Network messenger - komunikator grupowy");
     }
 }
