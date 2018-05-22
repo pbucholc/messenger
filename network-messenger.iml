@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/res" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="designgridlayout-1.11" level="project" />
+    <orderEntry type="library" name="syntheticaBlackEye" level="project" />
+    <orderEntry type="library" name="syntheticaAluOxide" level="project" />
+    <orderEntry type="library" name="syntheticaBlueLight" level="project" />
+    <orderEntry type="library" name="syntheticaWhiteVision" level="project" />
+    <orderEntry type="library" name="guava-24.1-jre" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.46" level="project" />
+    <orderEntry type="library" name="synthetica" level="project" />
+  </component>
+</module>
