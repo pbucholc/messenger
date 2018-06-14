@@ -4,10 +4,7 @@ import nm.gui.MainWindow;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 
 public class FontColorListener implements ActionListener {
 
@@ -23,29 +20,31 @@ public class FontColorListener implements ActionListener {
     public void actionPerformed(ActionEvent arg0) {
         JDialog dialog = new JDialog(mainWindow);
         dialog.setLocationRelativeTo(mainWindow);
-        dialog.setTitle("Wybierz x");
-        String[] kolory = { "Czerwony", "Zielony", "Niebieski", "Zolty", "Rozowy", "Szary", "Czarny" };
-        JComboBox koloryCzcionek = new JComboBox(kolory);
-        dialog.add(koloryCzcionek);
+        dialog.setTitle("Wybierz kolor czcionki");
+
+        String[] colors = { "Czerwony", "Zielony", "Niebieski", "Zolty", "Rozowy", "Szary", "Czarny" };
+
+        JComboBox fontsColors = new JComboBox(colors);
+        dialog.add(fontsColors);
         dialog.setPreferredSize(new Dimension(250, 90));
-        koloryCzcionek.addKeyListener(new KeyAdapter() {
-            public void keyReleased(KeyEvent key) {
-                int k = key.getKeyCode();
-                if (k == 88) { // 88 its key code 'x'
-                    String kolor = (String) ((JComboBox) key.getSource()).getSelectedItem();
-                    switch (kolor) {
+
+        ItemListener itemListener = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    Object item = e.getItem();
+
+                    String color = (String) item;
+                    switch (color) {
                         case "Czerwony":
                             messages.setForeground(Color.RED);
                             break;
-
                         case "Zielony":
                             messages.setForeground(Color.GREEN);
                             break;
-
                         case "Niebieski":
                             messages.setForeground(Color.BLUE);
                             break;
-
                         case "Zolty":
                             messages.setForeground(Color.YELLOW);
                             break;
@@ -55,18 +54,16 @@ public class FontColorListener implements ActionListener {
                         case "Szary":
                             messages.setForeground(Color.GRAY);
                             break;
-
                         case "Czarny":
                             messages.setForeground(Color.BLACK);
                             break;
-
                     }
                 }
-            }
-        });
+            }};
+
+        fontsColors.addItemListener(itemListener);
+
         dialog.pack();
         dialog.setVisible(true);
-
     }
-
 }

@@ -40,17 +40,18 @@ public class SignUpButtonListener implements ActionListener {
             JOptionPane.showMessageDialog(null, "Podane hasło jest za krótkie. Minimalna długość hasła to 5 znaków.");
             return;
         }
-
         Long passwordMD5 = Hashing.md5().hashString(User.password, Charsets.UTF_8).asLong();
 
+        //TODO
         boolean signUpCorrect = ConnectDatabase.signUp(User.login, passwordMD5 + "");
+
         if (signUpCorrect) {
             mainWindow.remove(signUpPanel);
             mainWindow.add(new LogInPanel(dimension.width,dimension.height,mainWindow));
             mainWindow.revalidate();
             mainWindow.repaint();
         } else {
-            JOptionPane.showMessageDialog(null, "Rejestracja niepowiodła się. Uzytkownik o podanym loginie już istnieje w bazie danych.");
+            JOptionPane.showMessageDialog(null, "Rejestracja niepowiodła się. Uzytkownik o podanym loginie istnieje już w bazie danych.");
         }
     }
 }

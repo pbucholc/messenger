@@ -66,5 +66,4 @@ public class WelcomePanel extends JPanel {
             contentLayout.row().grid(new JLabel());
         }
     }
-    
 }

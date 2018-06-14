@@ -1,6 +1,7 @@
 package nm.gui;
 
 import client.Client;
+
 import net.java.dev.designgridlayout.DesignGridLayout;
 import nm.gui.components.PlaceholderPasswordField;
 import nm.gui.components.PlaceholderTextField;
@@ -9,8 +10,6 @@ import nm.logics.listeners.LogInButtonListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 

@@ -30,7 +30,5 @@ public class LogInPanelButtonListener implements ActionListener {
         mainWindow.repaint();
 
         SoundPlayer.playSound("beep");
-
     }
-
 }

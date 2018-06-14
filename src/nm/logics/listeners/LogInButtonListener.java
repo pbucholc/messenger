@@ -1,7 +1,6 @@
 package nm.logics.listeners;
 
 import com.google.common.base.Charsets;
-import com.google.common.hash.Hasher;
 import com.google.common.hash.Hashing;
 import nm.db.ConnectDatabase;
 import nm.gui.ChatPanel;
@@ -33,8 +32,10 @@ public class LogInButtonListener implements ActionListener {
         SoundPlayer.playSound("beep");
         User.login = logInPanel.getEmail().getText();
         User.password = logInPanel.getPassword().getText();
+
         Long passwordMD5 = Hashing.md5().hashString(User.password, Charsets.UTF_8).asLong();
 
+        //TODO
         boolean logInSuccesed = ConnectDatabase.logIn(User.login, passwordMD5 + "");
 
         if (logInSuccesed) {

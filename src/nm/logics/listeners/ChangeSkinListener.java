@@ -22,7 +22,6 @@ public class ChangeSkinListener implements ActionListener {
         JMenuItem item = (JMenuItem) e.getSource();
         int number = (int) item.getClientProperty("Number");
 
-
         switch (number) {
             case 0:
                 java.awt.EventQueue.invokeLater(new Runnable() {
@@ -166,5 +165,4 @@ public class ChangeSkinListener implements ActionListener {
                 break;
         }
     }
-
 }

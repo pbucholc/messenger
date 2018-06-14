@@ -1,10 +1,6 @@
 package client;
 
 import nm.gui.ChatPanel;
-import nm.gui.MainWindow;
-import nm.model.User;
-
-import javax.swing.*;
 import java.io.*;
 import java.net.*;
 

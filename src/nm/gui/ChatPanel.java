@@ -55,7 +55,6 @@ public class ChatPanel extends JPanel {
         scrollChatPane.setSize(450,365);
         scrollChatPane.setLocation(15,15);
 
-
         usersLabel = new JLabel("Dostępni użytkownicy:");
         usersLabel.setHorizontalAlignment(SwingConstants.CENTER);
         contentPanel.add(usersLabel);
@@ -70,7 +69,6 @@ public class ChatPanel extends JPanel {
         contentPanel.add(scrollUserPane);
         scrollUserPane.setSize(185,340);
         scrollUserPane.setLocation(480,40);
-
 
         myMessage = new PlaceholderTextField();
         myMessage.setDisabledTextColor(Color.BLACK);

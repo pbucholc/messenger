@@ -1,40 +1,14 @@
 package nm.gui.components;
 
 import java.awt.*;
-
 import javax.swing.*;
-import javax.swing.text.Document;
 
-@SuppressWarnings("serial")
+// From stackoverflow.com
 public class PlaceholderPasswordField extends JPasswordField {
 
     private String placeholder;
 
     public PlaceholderPasswordField() {
-    }
-
-    public PlaceholderPasswordField(
-            final Document pDoc,
-            final String pText,
-            final int pColumns)
-    {
-        super(pDoc, pText, pColumns);
-    }
-
-    public PlaceholderPasswordField(final int pColumns) {
-        super(pColumns);
-    }
-
-    public PlaceholderPasswordField(final String pText) {
-        super(pText);
-    }
-
-    public PlaceholderPasswordField(final String pText, final int pColumns) {
-        super(pText, pColumns);
-    }
-
-    public String getPlaceholder() {
-        return placeholder;
     }
 
     @Override

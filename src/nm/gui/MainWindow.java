@@ -19,12 +19,10 @@ public class MainWindow extends JFrame {
         try {
             UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());
         } catch (UnsupportedLookAndFeelException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
 
         frameDimension = new Dimension(400,515);
         setPreferredSize(frameDimension);
@@ -34,13 +32,11 @@ public class MainWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //TODO add listener to close button, so that we can close all conections before exiting. Then null messeges will be send
 
-
         setVisible(true);
         pack();
         setLocationRelativeTo(null);
 
     }
-
     public Client getClient(){
         return client;
     }
